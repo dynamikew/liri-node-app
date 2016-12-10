@@ -1,18 +1,17 @@
 var twitter = require("twitter");
 var spotify = require("spotify");
-var imdb = require('imdb');
+var request = require('request');
 
 // imdb pulls
 
 // ----------------------------------------------------------------
 
-imdb('tt3659388', function(err, data) {
-  if(err)
-    console.log(err.stack);
- 
-  if(data)
-    console.log(data);
-});
+
+request('http://www.google.com', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log(body) // Show the HTML for the Google homepage. 
+  }
+})
 
 // Spotify pulls
 
